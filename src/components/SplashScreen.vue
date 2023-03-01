@@ -1,5 +1,8 @@
 <template>
-    <div>SplashScreen</div>
+    <div class="splashscreen">
+      <img src="@/assets/cashflow-icon_070076db-e83a-4afa-b18d-ee058c2b646e.svg" alt="Logo"/>
+      <h1><span>Cash</span>Trin</h1>
+    </div>
 </template>
 
 <style scoped>
