@@ -1,6 +1,40 @@
 <template>
-    <main>Resume</main>
+    <main>
+      <p>{{ labelVisual }}</p>
+      <div>
+        <h1>{{ amountVisual }}</h1>      
+      </div>
+    </main>
 </template>
+<script>
+  export default {
+    props:{
+      label:{
+        type: String,
+        default: null,
+      },
+      totalLabel:{
+        type: String,
+      },
+      totalAmount:{
+        type:Number,
+      },
+      amount:{
+        type: Number,
+        default: null,
+      },
+    },
+    computed: {
+      amountVisual(){
+        return this.amount !== null ? this.amount : this.totalAmount;
+      },
+      labelVisual(){
+        return this.label !== null ? this.label : this.totalLabel;
+      }
+      
+    },
+  }
+</script>
 <style scoped>
 main {
     display: flex;
