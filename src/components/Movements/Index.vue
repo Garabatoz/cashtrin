@@ -3,9 +3,13 @@
         <h2 class="title">Historial</h2>
         <div class="content">
             <Movements 
-                v-for="movement in movements" 
-                :key="movement.id"
-                :title="movement.title"
+                v-for="{ id, title, description, amount } in movements" 
+                :key="id"
+                :id="id"
+                :title="title"
+                :description="description"
+                :amount="amount"
+                @remove="remove"
             >              
             </Movements>
         </div>
@@ -15,12 +19,14 @@
 <script setup>
 import { toRefs, defineProps } from 'vue';
 import Movements from './Movements.vue';
-
+const remove = (id) =>{
+  console.log ("remove", id)
+}
 const props = defineProps ({
     movements: {
         type: Array,
         default: () => [],
-    }
+    },
 })
 const {movements}  = toRefs(props)
 </script>

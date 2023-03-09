@@ -58,7 +58,6 @@
     .movements .body {
       height: 75vh;
       width: 100%;
-      text-align: center;
     }
     .movements .head .grip {
       width: 120px;
