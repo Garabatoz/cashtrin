@@ -17,10 +17,13 @@
     </div>
 </template>
 <script setup>
-import { toRefs, defineProps } from 'vue';
+import { toRefs, defineProps , defineEmits} from 'vue';
 import Movements from './Movements.vue';
+
+const emit = defineEmits(["remove"]);
+
 const remove = (id) =>{
-  console.log ("remove", id)
+  emit("remove", id);
 }
 const props = defineProps ({
     movements: {
