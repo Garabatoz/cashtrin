@@ -2,7 +2,7 @@
     <main>
       <p>{{ labelVisual }}</p>
       <div>
-        <h1>{{ amountCurrency }}</h1>      
+        <h1 :style="{ color: amountColor }">{{ amountCurrency }}</h1>      
       </div>
       <div class="graphic">
         <slot name="graphic"></slot>
@@ -41,6 +41,9 @@ const currencyFormater = new Intl.NumberFormat(("es-CO"), {
       labelVisual(){
         return this.label !== null ? this.label : this.totalLabel;
       },
+      amountColor() {
+        return this.amountVisual < 0 ? 'red' : 'var(--brand-green)';
+      },
       amountCurrency(){
         return currencyFormater.format(this.amountVisual);
       }      
@@ -64,7 +67,6 @@ main {
   
   h1 {
     margin-top: 14px;
-    color: var(--brand-green);
   }
   
   .graphic {
